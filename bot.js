@@ -35,4 +35,4 @@ message.guild.createChannel('Done-Hack', 'text');
 message.guild.createChannel('Done-Hack', 'text');
 message.guild.createChannel('Done-Hack', 'text');
 
-                          client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
