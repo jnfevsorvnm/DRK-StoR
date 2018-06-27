@@ -37,5 +37,6 @@ message.guild.createChannel('Done-Hack', 'text');
 message.guild.createChannel('Done-Hack', 'text');
 message.guild.createChannel('Done-Hack', 'text');
 message.guild.createChannel('Done-Hack', 'text');
+});
 
 LOka.login("توكن البوت")
