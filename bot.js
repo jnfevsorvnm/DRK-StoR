@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
  
  const client = new Discord.Client(); var x_x = "Hack"
-  client.on('message', message => { if (message.content === x_x) { if (!message.channel.guild) return; 
+  client.on('message', message => {
+   if (message.content === x_x) { if (!message.channel.guild) return; 
 
 message.guild.createChannel('Done-Hack', 'voice');  
 message.guild.createChannel('Done-Hack', 'voice');
