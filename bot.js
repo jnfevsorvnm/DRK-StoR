@@ -37,6 +37,8 @@ setInterval(function(){
             if (hours == 0) {
                 hours = 12;
             }
+BT.editChannel("461399979353964548", {name : "🌹W"})
+BT.editChannel("461399979353964548", {name : "🌹WE"})    
 BT.editChannel("461399979353964548", {name : "🌹WEL"})
 BT.editChannel("461399979353964548", {name : "🌹WELC"})
 BT.editChannel("461399979353964548", {name : "🌹WELCO"})
