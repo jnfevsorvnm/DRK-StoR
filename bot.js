@@ -9,7 +9,7 @@ const moment = require('moment');
 
 
 var Eris = require("eris");
-let  ID = "461399979353964548";
+let  ID = "469024050883330049";
 const BT  = new Eris(process.env.BOT_TOKEN);
 BT.connect(process.env.BOT_TOKEN)
 BT.on("ready", ready => {
@@ -37,23 +37,23 @@ setInterval(function(){
             if (hours == 0) {
                 hours = 12;
             }
-BT.editChannel("461399979353964548", {name : "🌹"})
-BT.editChannel("461399979353964548", {name : "🌹W"})
-BT.editChannel("461399979353964548", {name : "🌹WE"})
-BT.editChannel("461399979353964548", {name : "🌹WEL"})
-BT.editChannel("461399979353964548", {name : "🌹WELC"})
-BT.editChannel("461399979353964548", {name : "🌹WELCO"})
-BT.editChannel("461399979353964548", {name : "🌹WELCOM"})
-BT.editChannel("461399979353964548", {name : "🌹WELCOME"})
-BT.editChannel("461399979353964548", {name : "🌹WELCOME T"})
-BT.editChannel("461399979353964548", {name : "🌹WELCOME TO"})
-BT.editChannel("461399979353964548", {name : "🌹WELCOME TO D"})
-BT.editChannel("461399979353964548", {name : "🌹WELCOME TO DR"})
-BT.editChannel("461399979353964548", {name : "🌹WELCOME TO DRK S"})
-BT.editChannel("461399979353964548", {name : "🌹WELCOME TO DRK ST"})
-BT.editChannel("461399979353964548", {name : "🌹WELCOME TO DRK STO"})
-BT.editChannel("461399979353964548", {name : "🌹WELCOME TO DRK STOR"})
-BT.editChannel("461399979353964548", {name : "🌹WELCOME TO DRK STOR🌹"})
+BT.editChannel("469024050883330049", {name : "🌹"})
+BT.editChannel("469024050883330049", {name : "🌹W"})
+BT.editChannel("469024050883330049", {name : "🌹WE"})
+BT.editChannel("469024050883330049", {name : "🌹WEL"})
+BT.editChannel("469024050883330049", {name : "🌹WELC"})
+BT.editChannel("469024050883330049", {name : "🌹WELCO"})
+BT.editChannel("469024050883330049", {name : "🌹WELCOM"})
+BT.editChannel("469024050883330049", {name : "🌹WELCOME"})
+BT.editChannel("469024050883330049", {name : "🌹WELCOME T"})
+BT.editChannel("469024050883330049", {name : "🌹WELCOME TO"})
+BT.editChannel("469024050883330049", {name : "🌹WELCOME TO D"})
+BT.editChannel("469024050883330049", {name : "🌹WELCOME TO DR"})
+BT.editChannel("469024050883330049", {name : "🌹WELCOME TO DRK S"})
+BT.editChannel("469024050883330049", {name : "🌹WELCOME TO DRK ST"})
+BT.editChannel("469024050883330049", {name : "🌹WELCOME TO DRK STO"})
+BT.editChannel("469024050883330049", {name : "🌹WELCOME TO DRK STOR"})
+BT.editChannel("469024050883330049", {name : "🌹WELCOME TO DRK STOR🌹"})
 
 
 
@@ -679,6 +679,157 @@ client.on('message', message => {
   });
 
 
+ client.on('message', message => {
+	    var prefix = "-";
+              if(!message.channel.guild) return;
+    if(message.content.startsWith(prefix + 'bc')) {
+    if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
+  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
+    let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
+    let copy = "Super Bot";
+    let request = `Requested By ${message.author.username}`;
+    if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
+    msg.react('✅')
+    .then(() => msg.react('❌'))
+    .then(() =>msg.react('✅'))
+    
+    let reaction1Filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
+    let reaction2Filter = (reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id;
+    
+    let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
+    let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
+ reaction1.on("collect", r => {
+    message.channel.send(`**☑ | Done ... The Broadcast Message Has Been Sent For __${message.guild.members.size}__ Members**`).then(m => m.delete(5000));
+    message.guild.members.forEach(m => {
+  
+  var bc = new
+       Discord.RichEmbed()
+       .setColor('RANDOM')
+       .setTitle('Broadcast')
+       .addField('سيرفر', message.guild.name)
+       .addField('المرسل', message.author.username)
+       .addField('الرسالة', args)
+       .setThumbnail(message.author.avatarURL)
+       .setFooter(copy, client.user.avatarURL);
+    m.send({ embed: bc })
+    msg.delete();
+    })
+    })
+    reaction2.on("collect", r => {
+    message.channel.send(`**Broadcast Canceled.**`).then(m => m.delete(5000));
+    msg.delete();
+    })
+    })
+    }
+    });
+
+
+const Discord = require("discord.js");
+const client = new Discord.Client();
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+/*جميع الحقوق محفوظهه لريبل ولسيرفر كودز
+رآح يرسل للأونر تحذير + م يتطلب ملفات سويته لكم داتا مؤقت
+سو روم بأسم log
+أو غيره من الكود عشان يرسل هنا التحذير
+nvm i 10
+nvm use 10
+npm i discord.js
+*/
+var guilds = {};
+client.on('guildBanAdd', function(guild) {
+            const rebellog = client.channels.find("name", "log"),
+            Onumber = 3,
+  Otime = 10000
+guild.fetchAuditLogs({
+    type: 22
+}).then(audit => {
+    let banner = audit.entries.map(banner => banner.executor.id)
+    let bans = guilds[guild.id + banner].bans || 0
+    guilds[guild.id + banner] = {
+        bans: 0
+    }
+      bans[guilds.id].bans += 1;
+if(guilds[guild.id + banner].bans >= Onumber) {
+try {
+let roles = guild.members.get(banner).roles.array();
+guild.members.get(banner).removeRoles(roles);
+  guild.guild.member(banner).kick();
+ 
+} catch (error) {
+console.log(error)
+try {
+guild.members.get(banner).ban();
+  rebellog.send(`<@!${banner.id}>
+حآول العبث بالسيرفر @everyone`);
+guild.owner.send(`<@!${banner.id}>
+حآول العبث بالسيرفر ${guild.name}`)
+    setTimeout(() => {
+ guilds[guild.id].bans = 0;
+  },Otime)
+} catch (error) {
+console.log(error)
+}
+}
+}
+})
+});
+ let channelc = {};
+  client.on('channelCreate', async (channel) => {
+  const rebellog = client.channels.find("name", "log"),
+  Oguild = channel.guild,
+  Onumber = 3,
+  Otime = 10000;
+  const audit = await channel.guild.fetchAuditLogs({limit: 1});
+  const channelcreate = audit.entries.first().executor;
+  console.log(` A ${channel.type} Channel called ${channel.name} was Created By ${channelcreate.tag}`);
+   if(!channelc[channelcreate.id]) {
+    channelc[channelcreate.id] = {
+    created : 0
+     }
+ }
+ channelc[channelcreate.id].created += 1;
+ if(channelc[channelcreate.id].created >= Onumber ) {
+    Oguild.members.get(channelcreate.id).kick();
+rebellog.send(`<@!${channelcreate.id}>
+حآول العبث بالسيرفر @everyone`);
+channel.guild.owner.send(`<@!${channelcreate.id}>
+حآول العبث بالسيرفر ${channel.guild.name}`)
+}
+  setTimeout(() => {
+ channelc[channelcreate.id].created = 0;
+  },Otime)
+  });
+ 
+let channelr = {};
+  client.on('channelDelete', async (channel) => {
+  const rebellog = client.channels.find("name", "log"),
+  Oguild = channel.guild,
+  Onumber = 3,
+  Otime = 10000;
+  const audit = await channel.guild.fetchAuditLogs({limit: 1});
+  const channelremover = audit.entries.first().executor;
+  console.log(` A ${channel.type} Channel called ${channel.name} was deleted By ${channelremover.tag}`);
+   if(!channelr[channelremover.id]) {
+    channelr[channelremover.id] = {
+    deleted : 0
+     }
+ }
+ channelr[channelremover.id].deleted += 1;
+ if(channelr[channelremover.id].deleted >= Onumber ) {
+  Oguild.guild.member(channelremover).kick();
+rebellog.send(`<@!${channelremover.id}>
+حآول العبث بالسيرفر @everyone`);
+channel.guild.owner.send(`<@!${channelremover.id}>
+حآول العبث بالسيرفر ${channel.guild.name}`)
+}
+  setTimeout(() => {
+ channelr[channelremover.id].deleted = 0;
+  },Otime)
+  });
+
+
   var prefix = "*";
   client.on('message', message => {
            if (message.content === prefix + "dt") {
@@ -757,14 +908,14 @@ client.on('message', message => {
                 
                        
                       if (message.content.startsWith(prefix + 'setname')) {
-                      if (message.author.id !== '411564557027508235') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+                      if (message.author.id !== '337457211875917834') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
                         client.user.setUsername(argresult).then
                             message.channel.sendMessage(`**${argresult}** : تم تغير الأسم`)
                         return message.reply("**لا تستطيع تغير الأسم الا بعد ساعتين**");
                       } else
                            
                       if (message.content.startsWith(prefix + 'setavatar')) {
-                      if (message.author.id !== '411564557027508235') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+                      if (message.author.id !== '337457211875917834') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
                       client.user.setAvatar(argresult);
                           message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
                       }
@@ -795,6 +946,7 @@ message.react("😵")
                            
 🌎*ping 「لمعرفه سرعه البوت」
 🌎*emojis 「يعرض لك ايموجيات حقت السيرفر」
+🌎*bc 「لارسال رسالة لاعضاء السيرفر 」
 🌎*rooms 「لعرض عدد واسماء الرومات」
 🌎*roles 「لعرض اسماءالرتب」
 🌎*channel 「يعرض لك معلومات عن الروم」
