@@ -7,7 +7,6 @@ const moment = require('moment');
 
 
 
-
 var Eris = require("eris");
 let  ID = "469024050883330049";
 const BT  = new Eris(process.env.BOT_TOKEN);
@@ -47,13 +46,9 @@ BT.editChannel("469024050883330049", {name : "🌹WELCOM"})
 BT.editChannel("469024050883330049", {name : "🌹WELCOME"})
 BT.editChannel("469024050883330049", {name : "🌹WELCOME T"})
 BT.editChannel("469024050883330049", {name : "🌹WELCOME TO"})
-BT.editChannel("469024050883330049", {name : "🌹WELCOME TO D"})
-BT.editChannel("469024050883330049", {name : "🌹WELCOME TO DR"})
-BT.editChannel("469024050883330049", {name : "🌹WELCOME TO DRK S"})
-BT.editChannel("469024050883330049", {name : "🌹WELCOME TO DRK ST"})
-BT.editChannel("469024050883330049", {name : "🌹WELCOME TO DRK STO"})
-BT.editChannel("469024050883330049", {name : "🌹WELCOME TO DRK STOR"})
-BT.editChannel("469024050883330049", {name : "🌹WELCOME TO DRK STOR🌹"})
+BT.editChannel("469024050883330049", {name : "🌹WELCOME TO K"})
+BT.editChannel("469024050883330049", {name : "🌹WELCOME TO KN"})
+BT.editChannel("469024050883330049", {name : "🌹WELCOME TO KND🌹"})
 
 
 
