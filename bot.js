@@ -11,6 +11,13 @@ client.user.setGame(' KINGS NEVER DIE . ','https://www.twitch.tv/sytra_ayman');
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`:rose:  **Welcome To KND Clan** :rose: 
+:crown:اسم العضو  ${member}:crown:  
+انت العضو رقم ${member.guild.memberCount} `) 
+}).catch(console.error)
+})
 
 var Eris = require("eris");
 let  ID = "469024050883330049";
