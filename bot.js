@@ -545,6 +545,7 @@ if(message.content.startsWith(prefix + 'channel')) {
     message.channel.sendEmbed(embed)
     }
     });
+      var jimp = require('jimp')
     client.on("message", async message => {
         if(!message.channel.guild) return;
  var prefix= "*";
