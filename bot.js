@@ -11,6 +11,7 @@ client.user.setGame(' KINGS NEVER DIE . ','https://www.twitch.tv/sytra_ayman');
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+
 const Canvas = require('canvas')
 const sw = JSON.parse(fs.readFileSync("setWlc.json", "UTF8"))
  
