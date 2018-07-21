@@ -4,6 +4,7 @@ const { Client, Util } = require('discord.js');
 const dateFormat = require('dateformat');
 const fs = require('fs');
 const moment = require('moment');
+const jimp = require('jimp');   
 
 
 client.on('ready', () => {
@@ -11,7 +12,6 @@ client.user.setGame(' KINGS NEVER DIE . ','https://www.twitch.tv/sytra_ayman');
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-const jimp = require('jimp')   
 const Canvas = require('canvas')
 const sw = JSON.parse(fs.readFileSync("setWlc.json", "UTF8"))
  
