@@ -6,7 +6,10 @@ const fs = require('fs');
 const moment = require('moment');
 
 
-
+client.on('ready', () => {
+client.user.setGame(' KINGS NEVER DIE . ','https://www.twitch.tv/sytra_ayman');
+  console.log(`Logged in as ${client.user.tag}!`);
+});
 
 var Eris = require("eris");
 let  ID = "469024050883330049";
